@@ -1,0 +1,18 @@
+// compileOnSave
+// compileOnSave: true
+// includes
+
+// base
+@import 'base/normalize';
+@import 'base/customreset';
+@import 'base/colors';
+@import 'base/breakpoints';
+@import 'base/body';
+@import 'base/typography';
+@import 'base/notransition';
+@import 'base/spinner';
+
+//components
+@import 'components/mainContent';
+@import 'components/impressum';
+@import 'components/footer';

@@ -1,0 +1,65 @@
+// main: ../main.scss
+body {
+  min-height: 100vh;
+
+  // fixed overflow issue in safari
+  position: relative;
+  width: 100%;
+  overflow-x: hidden !important;
+  display: block;
+
+  background: rgba(24,21,32,1);
+background: -moz-linear-gradient(45deg, rgba(24,21,32,1) 0%, rgba(19,11,47,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(24,21,32,1)), color-stop(100%, rgba(19,11,47,1)));
+background: -webkit-linear-gradient(45deg, rgba(24,21,32,1) 0%, rgba(19,11,47,1) 100%);
+background: -o-linear-gradient(45deg, rgba(24,21,32,1) 0%, rgba(19,11,47,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(24,21,32,1) 0%, rgba(19,11,47,1) 100%);
+background: linear-gradient(45deg, rgba(24,21,32,1) 0%, rgba(19,11,47,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181520', endColorstr='#130b2f', GradientType=1 );
+  ::selection {
+  background: #FFF; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: #FFF; /* Gecko Browsers */
+  }
+
+
+}
+body::before {
+  content: '';
+  display: block;
+  height: 460px;
+  background-repeat: no-repeat;
+  margin-top: -13px;
+  width: 640px;
+  position: absolute;
+  z-index: -10;
+  background-image: url(../resources/img/top-splice-1.png);
+  @include s {
+    left: -130px;
+  }
+}
+
+body::after {
+  z-index: -10;
+  content: '';
+  display: block;
+  height: 460px;
+  background-repeat: no-repeat;
+  right: 0;
+  top: 0;
+  margin-right: -5px;
+  margin-top: -5px;
+  width: 640px;
+  position: absolute;
+  background-image: url(../resources/img/top-splice-2.png);
+  @include s {
+    right: -460px;
+  }
+}
+
+
+// hide google recaptcha
+.grecaptcha-badge {
+  display: none;
+}

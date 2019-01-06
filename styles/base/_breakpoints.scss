@@ -1,0 +1,31 @@
+// main: ../main.scss
+$s-width: 480px;
+$m-width: 880px;
+$l-width: 1290px;
+@mixin s {
+  @media (max-width: #{$m-width}) {
+    @content;
+  }
+}
+@mixin m {
+  @media (max-width: #{$l-width}) {
+    @content;
+  }
+}
+@mixin l {
+  @media (min-width: #{$l-width + 1}){
+    @content;
+  }
+}
+
+
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}

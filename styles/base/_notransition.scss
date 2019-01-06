@@ -1,0 +1,10 @@
+// main: ../main.scss
+
+body.notransition
+{
+    -webkit-transition: none !important;
+       -moz-transition: none !important;
+        -ms-transition: none !important;
+         -o-transition: none !important;
+            transition: none !important;
+}

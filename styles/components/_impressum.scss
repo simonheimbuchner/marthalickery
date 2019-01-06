@@ -1,0 +1,28 @@
+// main: ../main.scss
+
+
+#impressum {
+    color: $color-lightgrey;
+    font-size: 17px;
+    padding: 190px 20px;
+        box-sizing: border-box;
+    * {
+      color: $color-lightgrey;
+      font-size: 1em;
+      line-height: 140%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+    h2 {
+      font-weight: 600;
+    }
+    a:hover {
+      color: white;
+    }
+
+    .back {
+      color: $color-cyan;
+      font-weight: 700;
+    }
+}
