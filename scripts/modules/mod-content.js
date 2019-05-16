@@ -38,6 +38,10 @@ function contentWrapper( defaults, pC ) {
                         var htmlVideo = createHTMLVideoEl( defaults, thisData );
                         htmlContent.innerHTML += htmlVideo;
                         break;
+                  case "videoEmbed":
+                        var htmlYoutubeVideo = createYoutubeVideo( defaults, thisData );
+                        htmlContent.innerHTML += htmlYoutubeVideo;
+                        break;
                   case "form":
                         var htmlForm = createHTMLFormEl( thisData );
                         htmlContent.appendChild( htmlForm );
@@ -86,7 +90,7 @@ function createHTMLTextEl( data ) {
                   break;
             case "cta":
                   htmlText = document.createElement( "div" );
-                  htmlText.setAttribute("data-type", "button")
+                  htmlText.setAttribute( "data-type", "button" )
                   break;
       }
 
@@ -104,6 +108,15 @@ function createHTMLImgEl( defaults, data ) {
 
       return htmlImg;
 }
+
+function createYoutubeVideo( defaults, data ) {
+      var vidPath = data.source;
+      var youtubeVid = '<iframe width="1280" height="720" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"\
+      src="' + vidPath + '">\
+      </iframe>';
+      return youtubeVid;
+}
+
 
 function createHTMLVideoEl( defaults, data ) {
       var vidPath = defaults.vidPath + "/" + data.source;
@@ -124,9 +137,9 @@ function createHTMLVideoEl( defaults, data ) {
 
 function createHTMLFormEl( data ) {
       var htmlForm = document.createElement( "form" );
-      htmlForm.setAttribute("method", "post");
-      htmlForm.setAttribute("action", data.action);
-      htmlForm.setAttribute("id", data.id)
+      htmlForm.setAttribute( "method", "post" );
+      htmlForm.setAttribute( "action", data.action );
+      htmlForm.setAttribute( "id", data.id )
       for ( k in data.content ) {
             var thisData = data.content[ k ];
             var inputEl = document.createElement( thisData.tag ); // create input/textarea/button
@@ -141,8 +154,8 @@ function createHTMLFormEl( data ) {
             if ( thisData.required == true )
                   inputEl.setAttribute( "required", "required" );
             if ( thisData.label != false ) {
-                  var wrapperEl = document.createElement("div");
-                  wrapperEl.setAttribute("data-type", "inputWrapper")
+                  var wrapperEl = document.createElement( "div" );
+                  wrapperEl.setAttribute( "data-type", "inputWrapper" )
                   var labelEl = document.createElement( "label" );
                   labelEl.setAttribute( "for", thisData.name )
                   labelEl.appendChild( document.createTextNode( thisData.label ) )
@@ -151,8 +164,9 @@ function createHTMLFormEl( data ) {
             }
             if ( thisData.label != false ) {
                   htmlForm.appendChild( wrapperEl )
-            } else {
-                htmlForm.appendChild( inputEl )
+            }
+            else {
+                  htmlForm.appendChild( inputEl )
             }
 
 

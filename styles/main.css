@@ -668,7 +668,7 @@ main section {
 			width: 100%;
 }
 
-main video {
+main video, main iframe {
 			-webkit-box-shadow: 0 0 184px -6px rgba(145, 141, 152, 0.3);
 			-moz-box-shadow: 0 0 184px -6px rgba(145, 141, 152, 0.3);
 			box-shadow: 0 0 184px -6px rgba(145, 141, 152, 0.3);
@@ -687,7 +687,7 @@ main #trailerVideo {
 			}
 }
 
-main #trailerVideo video {
+main #trailerVideo video, main #trailerVideo iframe {
 			height: calc(100vw * 0.5625);
 			width: 100vw;
 }
@@ -985,14 +985,14 @@ main #Walkthrough {
 			font-weight: 300;
 }
 
-main #Walkthrough video {
+main #Walkthrough video, main #Walkthrough iframe {
 			width: 850px;
 			margin-top: 40px;
 			height: calc(850px * .5625);
 }
 
 @media (max-width: 880px) {
-			main #Walkthrough video {
+			main #Walkthrough video, main #Walkthrough iframe {
 						width: 100vw;
 						height: calc(100vw * .5625);
 			}
